@@ -1,0 +1,31 @@
+<p>emplist works!</p>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">PASSWORD</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">MARRIED</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr class="clickable" *ngFor="let emp of employees">
+        <td>
+            <a class="nav-link active" aria-current="page" routerLink="/updateemp/{{emp.eid}}" routerLinkActive="active" aria-current="page" >
+                {{ emp.eid }}
+              </a>
+        </td>
+        
+        <td>{{emp.ename}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.password}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.isMarried}}</td>
+        <td>
+          <button (click)="onDelete(emp)">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
